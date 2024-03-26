@@ -1,0 +1,19 @@
+﻿@model Dictionary<string,int>
+<table class="table" border="1">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Total Time Worked</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var employeeHours in Model)
+    {
+        <tr style="@(employeeHours.Value < 100 ? "background-color: #FFC0CB;" : "")">
+            <td>@employeeHours.Key</td>
+            <td>@employeeHours.Value @(employeeHours.Value == 1 ? "hour" : "hours")</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
